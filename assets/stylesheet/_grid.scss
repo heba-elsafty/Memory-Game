@@ -29,14 +29,6 @@ $map-grid-props: (
         flex-basis: (100 / ($grid__col / $i)) * 1%;
       }
     }
-    &__col#{$modifier}-offset-0 {
-      margin-left: 0;
-    }
-    @for $i from 1 through $grid__col{
-      &__col#{$modifier}-#{$i}{
-        margin-left: (100 / ($grid__col / $i)) * 1%;
-      }
-    }
   }
 }
 

@@ -4,4 +4,32 @@
 ################
 */
 $primary : #92278f ;
+$purple: #861a54 ;
+$pink: #ff3fd6 ;
+$light-pink:#f97df5;
 $secondary: #f78b1e;
+$yellow: #efe348;
+
+
+/*
+################
+GLOBAL GRID STYLE THEME
+################
+*/
+@at-root {
+  [class*='container__col-'] {
+    position: relative;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+/*
+################
+   THEME-img
+################
+*/
+img{
+  max-width:100%;
+  object-fit: cover;
+}

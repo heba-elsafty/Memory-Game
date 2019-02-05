@@ -1,32 +1,50 @@
 @import 'utilities';
 @import 'grid';
+@import 'components';
+@import 'animation';
 
 *{
-box-sizing: border-box; 
+  box-sizing: border-box;
 }
-html{
-  body{
-    margin: 0;
-    /*
-    ################
-    GLOBAL GRID STYLE THEME
-    ################
-    */
-    @at-root {
-      [class*='container__col-'] {
-        background-color: #ff6f69;
-        outline: 1px solid #ffcc5c;
-        position: relative;
-        padding-left: 15px;
-        padding-right: 15px;
-      }
-    }
+html,body{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background: url('../images/pattern.png');
+  .wrapper{
     header{
       text-align: center;
+      margin: 1em;
+      a{
+        display: block;
+        img{
+          width: 300px;;
+        }
+      }
     }
     main{
-      background: $primary;
-      height: 500px;
+      background-image: linear-gradient(to right, $primary,$pink,$purple,$yellow,$light-pink);
+      background-size: 600%;
+      margin-bottom: 1em;
+      border-radius: 10px;
+      box-shadow: 12px 15px 20px 0 rgba(107, 40, 105, 0.5);
+      /* Animation */
+      animation-duration: 50s;
+      animation-iteration-count: infinite;
+      animation-name: gradients;
+      .back-card{
+        background-image: url('../images/memory-logo.png') ;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        background-color: #fff;
+        border-radius: 10px;
+        height: 100%;
+      }
     }
   }
 }

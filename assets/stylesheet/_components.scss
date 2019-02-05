@@ -1,0 +1,35 @@
+/*
+################
+CARD STYLE
+################
+*/
+.deck{
+  padding: 1em;
+  background-position: 0 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  @media screen and(min-width: $grid__bp-sm * 1px){
+    flex-flow: row wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+  .card{
+    position: relative;
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    background: $primary;
+    box-shadow: 9px 9px 5px 0 #690266;
+    border-radius: 10px;
+    padding: 1em;
+    height: 200px;
+    @media screen and(min-width: $grid__bp-sm * 1px){
+      flex: 0 0 21.8%;
+      width: 21.8%;
+      margin-right: 15px;
+      margin-left: 15px;
+      margin-bottom: 20px;
+    }
+  }
+}
