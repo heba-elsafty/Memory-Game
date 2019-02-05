@@ -1,0 +1,32 @@
+@import 'utilities';
+@import 'grid';
+
+*{
+box-sizing: border-box; 
+}
+html{
+  body{
+    margin: 0;
+    /*
+    ################
+    GLOBAL GRID STYLE THEME
+    ################
+    */
+    @at-root {
+      [class*='container__col-'] {
+        background-color: #ff6f69;
+        outline: 1px solid #ffcc5c;
+        position: relative;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+    }
+    header{
+      text-align: center;
+    }
+    main{
+      background: $primary;
+      height: 500px;
+    }
+  }
+}
