@@ -64,8 +64,8 @@ for (let i = 0 ; i < cards.length ; i++){
       // Moves
       function movesCounter(){
         movesNum ++;
-        if(movesNum == 2){
-          counter.innerHTML = movesNum;
+        if(movesNum >= 1){
+          counter.innerHTML = movesNum
         }
       }
       movesCounter();
