@@ -1,8 +1,9 @@
 @import 'utilities';
+@import 'all.min.css';
 @import 'grid';
 @import 'components';
 @import 'animation';
-@import 'all.min.css';
+
 
 *{
   box-sizing: border-box;
@@ -112,14 +113,40 @@ body{
       }
 
       // TOdo CARD GAME
-      .back-card{
-        background-image: url('../images/memory-logo.png') ;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-        background-color: #fff;
-        border-radius: 10px;
-        height: 100%;
+      .card{
+        // Matched card
+        &.matched{
+          box-shadow: 0px 0px 15px 15px #b71d7d;
+          transition: box-shadow 1s;
+          border-radius: 10px;
+        }
+        &.card-is-flipped {
+          transform: translateX(-100%) rotateY(-180deg);
+          .back-card{
+            img{
+              transform: translate(0,25%);
+            }
+          }
+        }
+        .front-card{
+          display: flex;
+          height: 100%;
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          img{
+            border-radius: 10px;
+          }
+        }
+        .back-card{
+          background-color: #fff;
+          border-radius: 10px;
+          height: 100%;
+          transform: rotateY( 180deg );
+          img{
+            transform: translate(0.25%) translateY(25%) rotateY(-180deg);
+          }
+        }
       }
     }
   }
