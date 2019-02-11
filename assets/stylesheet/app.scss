@@ -119,6 +119,7 @@ body{
           box-shadow: 0px 0px 15px 15px #b71d7d;
           transition: box-shadow 1s;
           border-radius: 10px;
+          cursor: text;
         }
         &.card-is-flipped {
           transform: translateX(-100%) rotateY(-180deg);

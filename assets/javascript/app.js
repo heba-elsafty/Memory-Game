@@ -1,6 +1,3 @@
-// deck of all cards in game
-const deck = document.getElementsByClassName("card-deck");
-
 // click on a card to  display the card image
 // cards array holds all cards
 const card = document.getElementsByClassName('card');
@@ -30,6 +27,7 @@ shuffleArray(images);
 
 let openedImage = null;
 let openedCard = null;
+let failedNum = 0;
 
 
 
@@ -39,46 +37,69 @@ let openedCard = null;
 //
 // }
 
+//moves
+let movesNum = 0;
+let counter = document.querySelector(".moves-num");
+// function moveCounter(num){
+//   let moveHTML = document.getElementsByClassName('moves-num');
+//   movesnum++;
+// }
+
+
+
 // Score
-const rateNum = 5;
-function drawStars(){
+let scoreRateNum = 5;
+function drawStars(rateNum){
   const rateHtml = document.getElementById('rate');
   rateHtml.innerHTML = "";
-  for(let i = 1; i < rateNum;i++){
+  for(let i = 0; i < rateNum;i++){
     rateHtml.innerHTML += '<i  class="far fa-star"></i>';
   }
 }
+drawStars(scoreRateNum); //on start draw 5 stars
 
 for (let i = 0 ; i < cards.length ; i++){
   cards[i].addEventListener('click', function (e) { //on click
-    cards[i].classList.toggle('open');
-    cards[i].classList.toggle('card-is-flipped');
-    if (cards[i].classList.contains('open')){ // Unlock the box
-      cards[i].innerHTML = '<div class="front-card"><img src="' + images[i] +'" alt="cat"></div>';
+    if (!cards[i].classList.contains('open')){ //if box is Unlock
+      // Moves
+      function movesCounter(){
+        movesNum ++;
+        if(movesNum == 2){
+          counter.innerHTML = movesNum;
+        }
+      }
+      movesCounter();
 
+      cards[i].classList.add('open','card-is-flipped');
+      cards[i].innerHTML = '<div class="front-card"><img src="' + images[i] +'" /></div>';
       if(openedImage  == null ){ //this is first card
         openedImage =  images[i];
         openedCard = cards[i];
-
       } else { //second click on another image
         if(openedImage == images[i] ){ // matched images
           // score changed
           //add class mached
           cards[i].classList.add('matched');
           openedCard.classList.add('matched');
-        } else{
 
+        } else{
           let tempFirstCard = openedCard;
           setTimeout(function(){ //reset cards
             cards[i].innerHTML = '<div class="back-card"><img src="assets/images/memory-logo.png"></div>'; //reset current box
             tempFirstCard.innerHTML = '<div class="back-card"><img src="assets/images/memory-logo.png"></div>';
-            tempFirstCard.classList.remove('open');
-            tempFirstCard.classList.remove('card-is-flipped');
-            cards[i].classList.remove('open');
-            cards[i].classList.toggle('card-is-flipped');
-            var audio = new Audio('assets/audio/NFF-wrong-move.wav').play()
-            audio.play();
+            tempFirstCard.classList.remove('open','card-is-flipped');
+            cards[i].classList.remove('open','card-is-flipped');
           },500)
+          var audio = new Audio('assets/audio/NFF-wrong-move.wav');
+          audio.play();
+          failedNum ++ ;
+          if(failedNum == 3){
+            failedNum = 0;
+            if (scoreRateNum > 1 ){
+              scoreRateNum -= 1;
+              drawStars(scoreRateNum);
+            }
+          }
           //add class notmatched
         }
         openedImage = null;
@@ -86,7 +107,7 @@ for (let i = 0 ; i < cards.length ; i++){
 
     }
 
-  });//EOF  on Click
+  }); //EOF  on Click
 }
 
 // ShuffleImages
