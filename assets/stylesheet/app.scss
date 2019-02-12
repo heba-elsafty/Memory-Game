@@ -52,62 +52,34 @@ body{
             font-size: 20px;
           }
         }
-        // COUNTER
-        #counter {
+        // Timer
+        #timer {
+          color: white;
           text-align: center;
-          margin: 50px auto;
-          font-size: 2em;
-          color: #282828;
-          @media (max-width: 500px) {
-            font-size: 1.5em;
-          }
-          span, i {
+          text-transform: uppercase;
+          font-size: .7em;
+          letter-spacing: 5px;
+           .hours, .minutes, .seconds {
             display: inline-block;
-            vertical-align: middle;
-          }
-          span {
-            text-align: center;
-            min-width: 45px;
-            text-rendering: optimizeLegibility;
-            position: relative;
-            background-color: $dark;
-            margin: 0 2px;
-            padding: 5px;
-            color: white;
+            padding: 10px;
+            width: 100px;
             border-radius: 5px;
-            box-shadow: inset 0 1px 0.5px rgba(white, 0.4);
-            border: 1px solid black;
-            text-shadow: 0 0 2px black;
-            &.minutes:before {
-              content: "MIN";
-            }
-            &.seconds:before {
-              content: "SEC";
-            }
-            &:before {
-              top: -20px;
-              position: absolute;
-              left: 0;
-              right: 0;
-              display: block;
-              color: black;
-              font-size: 0.35em;
-              text-shadow: none;
-            }
-            &:after {
-              content: "";
-              position: absolute;
-              top: 50%;
-              left: 0;
-              right: 0;
-              height: 1px;
-              margin-top: 0.5px;
-              background-color: black;
-              box-shadow: 0 -1px 0 rgba(black, 0.1), 0 1px 0 rgba(white, 0.1);
+            color: #fff;
+            .numbers {
+              color: $purple;
+              font-size: 5em;
             }
           }
-          i {
-            font-style: normal;
+          .hours {
+            background: white;
+          }
+
+          .minutes {
+            background: #a7ce48;
+          }
+
+          .seconds {
+            background: $secondary;
           }
         }
         #moves {
@@ -167,6 +139,165 @@ body{
           }
         }
       }
+    }
+  }
+}
+
+
+$star: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+
+.balloon {
+  border: 1px solid #000;
+  border-radius: 50% 50% 50% 50%/ 40% 40% 60% 60%;
+
+
+  &.lightyellow {
+    position: absolute;
+    background: #ffd47b;
+    height: 85px;
+    width: 75px;
+    left: 30%;
+    top: 2%;
+    .triangle {
+      border-bottom: 14px solid #ffd47b;
+    }
+    .string {
+      background: #ffd47b;
+      border: 1px solid #ffd47b;
+      height: 115px;
+    }
+  }
+
+  &.pink {
+    position: absolute;
+    background: $pink;
+    height: 85px;
+    width: 75px;
+    right: 30%;
+    top: 2%;
+    .triangle {
+      border-bottom: 14px solid $pink;
+    }
+    .string {
+      background: $pink;
+      border: 1px solid $pink;
+      height: 115px;
+    }
+  }
+
+  &.purple {
+    position: absolute;
+    background: $purple;
+    left: 18%;
+    top: 9%;
+    height: 65px;
+    width: 70px;
+    .triangle {
+      border-bottom: 14px solid $purple;
+    }
+    .string {
+      background: $purple;
+      border: 1px solid $purple;
+    }
+  }
+
+  &.green {
+    position: absolute;
+    background: #a7ce48;
+    right: 18%;
+    top: 9%;
+    height: 65px;
+    width: 70px;
+    .triangle {
+      border-bottom: 14px solid #a7ce48;
+    }
+    .string {
+      background: #a7ce48;
+      border: 1px solid #a7ce48;
+    }
+  }
+  .eye {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    top: 40%;
+    left: 22%;
+    background: #000;
+    border-radius: 50%;
+    &:after {
+      content: '';
+      left: 35px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #000;
+      position: absolute;
+    }
+  }
+
+  .mouth {
+    position:absolute;
+    top: 45%;
+    left: 43%;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+  }
+
+  .happy {
+    border: 2px solid;
+    border-color: transparent #000 #000 transparent;
+    transform: rotate(45deg);
+  }
+
+  .triangle {
+    position: absolute;
+    left: 40%;
+    bottom: -10%;
+    width: 0;
+  	height: 0;
+  	border-left: 7px solid transparent;
+  	border-right: 7px solid transparent;
+  }
+
+  .string {
+    position: absolute;
+    height: 70px;
+    width: 1px;
+    left: 48%;
+    top: 100%;
+    z-index: -1;
+  }
+
+  .star {
+    width: 20px;
+    height: 20px;
+    background: white;
+    -webkit-clip-path: $star;
+    clip-path: $star;
+  }
+
+  .star-purple {
+    width: 30px;
+    height: 30px;
+    margin-left: 51px;
+    margin-top: -5px;
+    background: $purple;
+    -webkit-clip-path: $star;
+    clip-path: $star;
+  }
+
+  .star-lighyellow{
+    background: #ffd47b;
+  }
+}
+.balloon-right{
+  .balloon{
+
+
+    &.purple {
+      right: 18%;
+      left: auto;
     }
   }
 }

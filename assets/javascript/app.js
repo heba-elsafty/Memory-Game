@@ -43,19 +43,14 @@ let failedNum = 0;
 
 
 
-//moves
-let movesNum = 0;
+//Game Moves
+let moves = 0;
 let counter = document.querySelector(".moves-num");
-function movesCounter(  ){
-  movesNum ++;
-  if(movesNum >= 1){
-    counter.innerHTML = movesNum
-  }
-}
 
 
 
-// Rate
+
+//GAME Rate
 let scoreRateNum = 5;
 function drawStars(rateNum){
   const rateHtml = document.getElementById('rate');
@@ -66,11 +61,49 @@ function drawStars(rateNum){
 }
 drawStars(scoreRateNum); //on start draw 5 stars
 
+// Game Timer
+let seconds = 0 , minutes = 0;
+let timer = document.querySelector('#timer');
+let interval ;
+function satartTimer(){
+  interval = setInterval(function () {
+    timer.innerHTML = "<div class=\"minutes\"> \
+    <div class=\"numbers\">" + minutes + "</div>minutes</div> \
+    <div class=\"seconds\"> \
+    <div class=\"numbers\">" + seconds + "</div>seconds</div> \
+    </div>";
+    ;
+    seconds++;
+    if(seconds == 60){
+      minutes++;
+      seconds = 0 ;
+    }
+    if(minutes == 60){
+      hours++;
+      minutes = 0
+    }
+  }, 500);
+}
+
+function movesCounter(){
+  moves++;
+  moves.innerHTML = moves;
+}
+
 for (let i = 0 ; i < cards.length ; i++){
   cards[i].addEventListener('click', function (e) { //on click
     if (!cards[i].classList.contains('open')){ //if box is Unlock
-      // Moves
-
+      // Moves and timer
+      function movesCounter(){
+        moves ++;
+          counter.innerHTML = moves
+        if(moves == 1){
+          secondss = 0;
+          minutes = 0;
+          hours = 0;
+          satartTimer();
+        }
+      }
       movesCounter();
 
       cards[i].classList.add('open','card-is-flipped');
