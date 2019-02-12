@@ -32,22 +32,17 @@ function shuffleArray(array) {
     array[j] = temp;
   }
 }
-
 shuffleArray(images);
 
+// Global variable
 let openedImage = null;
 let openedCard = null;
 let failedNum = 0;
 
 
-
-
-
 //Game Moves
 let moves = 0;
 let counter = document.querySelector("#moves");
-
-
 
 
 //GAME Rate
@@ -85,10 +80,42 @@ function satartTimer(){
   }, 500);
 }
 
-// function movesCounter(){
-//   moves++;
-//   moves.innerHTML = moves;
-// }
+/*
+################
+RESTART BUTTON
+################
+*/
+let reset = document.querySelector("#restart");
+reset.addEventListener('click', function(){
+  restartGame();
+});
+
+
+function restartGame(){
+  // Reset MOVES
+ moves = 0;
+ counter.innerHTML = "<span class=\"moves-num\">" + moves + "</span>moves</span>";
+
+ // Reset TIMER
+ timer.innerHTML = "<div class=\"minutes\"> \
+ <div class=\"numbers\">" + 0 + "</div>min</div> \
+ <div class=\"seconds\"> \
+ <div class=\"numbers\">" + 0 + "</div>sec</div> \
+ </div>";
+ clearInterval(interval);
+
+ // Reset Rating
+ drawStars(5); //on start draw 5 stars
+
+// Reset CARD
+  for (let i = 0 ; i < cards.length ; i++){
+    cards[i].classList.remove('open', 'card-is-flipped','matched');
+    cards[i].innerHTML = '<div class="back-card"><img src="assets/images/memory-logo.png"></div>';
+  }
+
+}
+
+
 
 /*
 ################
@@ -99,7 +126,11 @@ function startGame(){
   for (let i = 0 ; i < cards.length ; i++){
     cards[i].addEventListener('click', function (e) { //on click
       if (!cards[i].classList.contains('open')){ //if box is Unlock
-        // Moves and timer
+        /*
+        ################
+        MOVES AND TIMER
+        ################
+        */
         function movesCounter(){
           moves ++;
             counter.innerHTML = "<span class=\"moves-num\">" + moves + "</span>moves</span>";
@@ -112,6 +143,11 @@ function startGame(){
         }
         movesCounter();
 
+        /*
+        ################
+        CARD GAME MATCH AND UNMATCH
+        ################
+        */
         cards[i].classList.add('open','card-is-flipped');
         cards[i].innerHTML = '<div class="front-card"><img src="' + images[i] +'" /></div>';
         if(openedImage  == null ){ //this is first card
