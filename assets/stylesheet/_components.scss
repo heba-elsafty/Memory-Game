@@ -25,6 +25,7 @@ CARD STYLE
     border-radius: 10px;
     padding: 1em;
     perspective: 600px;
+    position: relative;
     @media screen and(min-width: $grid__bp-sm * 1px){
       flex: 0 0 21.8%;
       width: 21.8%;
@@ -36,13 +37,12 @@ CARD STYLE
       position: relative;
       height: 100%;
       width: 100%;
-      transition: transform 0.5s , box-shadow 1s,background-color 1s;
+      transition: transform 0.5s ,border-width 0.5s,background-color 1s;
       transform-style: preserve-3d;
-       transform-origin: center right;
+      transform-origin: center right;
     }
   }
 }
-
 
 /*
 ################

@@ -187,7 +187,8 @@ CARD STYLE
     box-shadow: 9px 9px 5px 0 #690266;
     border-radius: 10px;
     padding: 1em;
-    perspective: 600px; }
+    perspective: 600px;
+    position: relative; }
     @media screen and (min-width: 576px) {
       .card-deck .flip-card {
         flex: 0 0 21.8%;
@@ -199,7 +200,7 @@ CARD STYLE
       position: relative;
       height: 100%;
       width: 100%;
-      transition: transform 0.5s , box-shadow 1s,background-color 1s;
+      transition: transform 0.5s ,border-width 0.5s,background-color 1s;
       transform-style: preserve-3d;
       transform-origin: center right; }
 
@@ -277,7 +278,7 @@ body {
       body .wrapper header a img {
         width: 300px; }
   body .wrapper main {
-    background-image: linear-gradient(to right, #92278f, #ff3fd6, #861a54, #efe348, #f97df5);
+    background-image: linear-gradient(to right, #a7ce48, #ffd47b, #f97df5, #f5a371, #efe348);
     background-size: 600%;
     margin-bottom: 1em;
     border-radius: 10px;
@@ -343,11 +344,27 @@ body {
             box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1); }
         body .wrapper main .game-header #counter i {
           font-style: normal; }
+      body .wrapper main .game-header #moves {
+        font-size: 20px;
+        color: #92278f;
+        border-radius: 50px;
+        text-align: center; }
+        body .wrapper main .game-header #moves .moves-num {
+          font-size: 30px;
+          font-weight: 600; }
     body .wrapper main .card.matched {
-      box-shadow: 0px 0px 15px 15px #b71d7d;
       transition: box-shadow 1s;
       border-radius: 10px;
-      cursor: text; }
+      cursor: text;
+      border: 10px solid #a7ce48;
+      background: #a7ce48;
+      box-shadow: -8px 8px 5px 0px rgba(99, 122, 42, 0.64);
+      transition: box-shadow 0.5s, border-width 0.5s;
+      border-style: outset;
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0; }
     body .wrapper main .card.card-is-flipped {
       transform: translateX(-100%) rotateY(-180deg); }
       body .wrapper main .card.card-is-flipped .back-card img {

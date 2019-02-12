@@ -29,7 +29,7 @@ body{
       }
     }
     main{
-      background-image: linear-gradient(to right, $primary,$pink,$purple,$yellow,$light-pink);
+      background-image: linear-gradient(to right, #a7ce48,#ffd47b,$light-pink,#f5a371,$yellow);
       background-size: 600%;
       margin-bottom: 1em;
       border-radius: 10px;
@@ -110,16 +110,34 @@ body{
             font-style: normal;
           }
         }
+        #moves {
+          font-size: 20px;
+          color: $primary;
+          border-radius: 50px;
+          text-align: center;
+          .moves-num {
+            font-size: 30px;
+            font-weight: 600;
+          }
+        }
       }
 
       // TOdo CARD GAME
       .card{
         // Matched card
         &.matched{
-          box-shadow: 0px 0px 15px 15px #b71d7d;
           transition: box-shadow 1s;
           border-radius: 10px;
           cursor: text;
+          border: 10px solid #a7ce48;
+          background: #a7ce48;
+          box-shadow: -8px 8px 5px 0px rgba(99, 122, 42, 0.64);
+          transition: box-shadow 0.5s , border-width 0.5s ;
+          border-style: outset;
+          position: absolute;
+          top: 0;
+          right: 0;
+          left: 0;
         }
         &.card-is-flipped {
           transform: translateX(-100%) rotateY(-180deg);

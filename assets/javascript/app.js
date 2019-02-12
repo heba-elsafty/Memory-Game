@@ -3,7 +3,7 @@
 const card = document.getElementsByClassName('card');
 const cards = [...card];
 
-//Image Array
+//Image
 const images = [
   'assets/images/cat.jpg' ,
   'assets/images/cow.jpg',
@@ -23,6 +23,16 @@ const images = [
   'assets/images/tiger.jpg',
 ]
 
+// ShuffleImages
+function shuffleArray(array) {
+  for (var i = array.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+}
+
 shuffleArray(images);
 
 let openedImage = null;
@@ -31,23 +41,21 @@ let failedNum = 0;
 
 
 
-// function reset(){
-//   openedImage = null;
-//   openedCard = null;
-//
-// }
+
 
 //moves
 let movesNum = 0;
 let counter = document.querySelector(".moves-num");
-// function moveCounter(num){
-//   let moveHTML = document.getElementsByClassName('moves-num');
-//   movesnum++;
-// }
+function movesCounter(  ){
+  movesNum ++;
+  if(movesNum >= 1){
+    counter.innerHTML = movesNum
+  }
+}
 
 
 
-// Score
+// Rate
 let scoreRateNum = 5;
 function drawStars(rateNum){
   const rateHtml = document.getElementById('rate');
@@ -62,12 +70,7 @@ for (let i = 0 ; i < cards.length ; i++){
   cards[i].addEventListener('click', function (e) { //on click
     if (!cards[i].classList.contains('open')){ //if box is Unlock
       // Moves
-      function movesCounter(){
-        movesNum ++;
-        if(movesNum >= 1){
-          counter.innerHTML = movesNum
-        }
-      }
+
       movesCounter();
 
       cards[i].classList.add('open','card-is-flipped');
@@ -110,23 +113,9 @@ for (let i = 0 ; i < cards.length ; i++){
   }); //EOF  on Click
 }
 
-// ShuffleImages
-function shuffleArray(array) {
-  for (var i = array.length - 1; i > 0; i--) {
-    var j = Math.floor(Math.random() * (i + 1));
-    var temp = array[i];
-    array[i] = array[j];
-    array[j] = temp;
-  }
-}
 
-
-
-
+// function reset(){
+//   openedImage = null;
+//   openedCard = null;
 //
-// else{ //Lock the box
-//     cards[i].innerHTML = '<div class="back-card"></div>';
 // }
-
-
-const stars = document.querySelectorAll(".fa-star");
