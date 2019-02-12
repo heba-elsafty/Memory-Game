@@ -34,40 +34,207 @@ body{
       margin-bottom: 1em;
       border-radius: 10px;
       box-shadow: 12px 15px 20px 0 rgba(107, 40, 105, 0.5);
-      padding: 1em;
+      width: $grid__bp-lg * 1px;
+      margin: 0 auto;
       /* Animation */
       animation-duration: 50s;
       animation-iteration-count: infinite;
       animation-name: gradients;
+      /*
+      ################
+      balloon
+      ################
+      */
+      .balloon {
+        border: 1px solid #000;
+        border-radius: 50% 50% 50% 50%/ 40% 40% 60% 60%;
 
-      // TOdO Game HEADR Action
-      .game-header{
-        margin-bottom: 1em;
-
-        // RATE
-        #rate{
-          color: #fff;
-          span{
-            font-weight: 600;
-            font-size: 20px;
+        &.lightyellow {
+          position: absolute;
+          background: #ffd47b;
+          height: 85px;
+          width: 75px;
+          left: 30%;
+          top: 2%;
+          .triangle {
+            border-bottom: 14px solid #ffd47b;
+          }
+          .string {
+            background: #ffd47b;
+            border: 1px solid #ffd47b;
+            height: 115px;
           }
         }
-        // Timer
+
+        &.pink {
+          position: absolute;
+          background: $pink;
+          height: 85px;
+          width: 75px;
+          right: 30%;
+          top: 2%;
+          .triangle {
+            border-bottom: 14px solid $pink;
+          }
+          .string {
+            background: $pink;
+            border: 1px solid $pink;
+            height: 115px;
+          }
+        }
+
+        &.purple {
+          position: absolute;
+          background: $purple;
+          left: 18%;
+          top: 9%;
+          height: 65px;
+          width: 70px;
+          .triangle {
+            border-bottom: 14px solid $purple;
+          }
+          .string {
+            background: $purple;
+            border: 1px solid $purple;
+          }
+        }
+
+        &.green {
+          position: absolute;
+          background: #a7ce48;
+          right: 18%;
+          top: 9%;
+          height: 65px;
+          width: 70px;
+          .triangle {
+            border-bottom: 14px solid #a7ce48;
+          }
+          .string {
+            background: #a7ce48;
+            border: 1px solid #a7ce48;
+          }
+        }
+        .eye {
+          position: absolute;
+          width: 7px;
+          height: 7px;
+          top: 40%;
+          left: 22%;
+          background: #000;
+          border-radius: 50%;
+          &:after {
+            content: '';
+            left: 35px;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #000;
+            position: absolute;
+          }
+        }
+
+        .mouth {
+          position:absolute;
+          top: 45%;
+          left: 43%;
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+        }
+
+        .happy {
+          border: 2px solid;
+          border-color: transparent #000 #000 transparent;
+          transform: rotate(45deg);
+        }
+
+        .triangle {
+          position: absolute;
+          left: 40%;
+          bottom: -10%;
+          width: 0;
+          height: 0;
+          border-left: 7px solid transparent;
+          border-right: 7px solid transparent;
+        }
+
+        .string {
+          position: absolute;
+          height: 70px;
+          width: 1px;
+          left: 48%;
+          top: 100%;
+          z-index: -1;
+        }
+
+        .star {
+          width: 20px;
+          height: 20px;
+          background: white;
+          -webkit-clip-path: $star;
+          clip-path: $star;
+        }
+
+        .star-purple {
+          width: 30px;
+          height: 30px;
+          margin-left: 51px;
+          margin-top: -5px;
+          background: $purple;
+          -webkit-clip-path: $star;
+          clip-path: $star;
+        }
+
+        .star-lighyellow{
+          background: #ffd47b;
+        }
+      }
+
+      /*
+      ################
+      TOdO Game HEADR Action
+      ################
+      */
+      .game-header{
+        background: #ffd47b;
+        padding: 1em;
+        border-radius: 10px 10px 0 0;
+        height: 100px;
+        min-height: 100px;
+        display: flex;
+        align-items: center;
+        box-shadow:  0 2px 10px 1px #00000030;
+        // RATE
+        #rate{
+          color: $pink;
+          font-size: 18px;
+          i{
+            font-weight: 600;
+            font-size: 15px;
+            padding-left: 5px;
+          }
+        }
+        /*
+        ################
+        TIMER
+        ################
+        */
         #timer {
-          color: white;
+          color: $primary;
           text-align: center;
           text-transform: uppercase;
-          font-size: .7em;
-          letter-spacing: 5px;
-           .hours, .minutes, .seconds {
+          font-size: 13px;;
+          letter-spacing: 2px;
+          .hours, .minutes, .seconds {
             display: inline-block;
             padding: 10px;
-            width: 100px;
+            width: 50px;
             border-radius: 5px;
-            color: #fff;
+            color: $primary;
             .numbers {
-              color: $purple;
-              font-size: 5em;
+              color: #ffd47b;
+              font-size: 2em;
+              font-weight: 600;
             }
           }
           .hours {
@@ -86,15 +253,20 @@ body{
           font-size: 20px;
           color: $primary;
           border-radius: 50px;
-          text-align: center;
           .moves-num {
             font-size: 30px;
             font-weight: 600;
+            padding-right: 10px;
+            color: $pink;
           }
         }
       }
 
-      // TOdo CARD GAME
+      /*
+      ################
+      TOdO Game CARD GAME
+      ################
+      */
       .card{
         // Matched card
         &.matched{
@@ -139,165 +311,6 @@ body{
           }
         }
       }
-    }
-  }
-}
-
-
-$star: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-
-.balloon {
-  border: 1px solid #000;
-  border-radius: 50% 50% 50% 50%/ 40% 40% 60% 60%;
-
-
-  &.lightyellow {
-    position: absolute;
-    background: #ffd47b;
-    height: 85px;
-    width: 75px;
-    left: 30%;
-    top: 2%;
-    .triangle {
-      border-bottom: 14px solid #ffd47b;
-    }
-    .string {
-      background: #ffd47b;
-      border: 1px solid #ffd47b;
-      height: 115px;
-    }
-  }
-
-  &.pink {
-    position: absolute;
-    background: $pink;
-    height: 85px;
-    width: 75px;
-    right: 30%;
-    top: 2%;
-    .triangle {
-      border-bottom: 14px solid $pink;
-    }
-    .string {
-      background: $pink;
-      border: 1px solid $pink;
-      height: 115px;
-    }
-  }
-
-  &.purple {
-    position: absolute;
-    background: $purple;
-    left: 18%;
-    top: 9%;
-    height: 65px;
-    width: 70px;
-    .triangle {
-      border-bottom: 14px solid $purple;
-    }
-    .string {
-      background: $purple;
-      border: 1px solid $purple;
-    }
-  }
-
-  &.green {
-    position: absolute;
-    background: #a7ce48;
-    right: 18%;
-    top: 9%;
-    height: 65px;
-    width: 70px;
-    .triangle {
-      border-bottom: 14px solid #a7ce48;
-    }
-    .string {
-      background: #a7ce48;
-      border: 1px solid #a7ce48;
-    }
-  }
-  .eye {
-    position: absolute;
-    width: 7px;
-    height: 7px;
-    top: 40%;
-    left: 22%;
-    background: #000;
-    border-radius: 50%;
-    &:after {
-      content: '';
-      left: 35px;
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #000;
-      position: absolute;
-    }
-  }
-
-  .mouth {
-    position:absolute;
-    top: 45%;
-    left: 43%;
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-  }
-
-  .happy {
-    border: 2px solid;
-    border-color: transparent #000 #000 transparent;
-    transform: rotate(45deg);
-  }
-
-  .triangle {
-    position: absolute;
-    left: 40%;
-    bottom: -10%;
-    width: 0;
-  	height: 0;
-  	border-left: 7px solid transparent;
-  	border-right: 7px solid transparent;
-  }
-
-  .string {
-    position: absolute;
-    height: 70px;
-    width: 1px;
-    left: 48%;
-    top: 100%;
-    z-index: -1;
-  }
-
-  .star {
-    width: 20px;
-    height: 20px;
-    background: white;
-    -webkit-clip-path: $star;
-    clip-path: $star;
-  }
-
-  .star-purple {
-    width: 30px;
-    height: 30px;
-    margin-left: 51px;
-    margin-top: -5px;
-    background: $purple;
-    -webkit-clip-path: $star;
-    clip-path: $star;
-  }
-
-  .star-lighyellow{
-    background: #ffd47b;
-  }
-}
-.balloon-right{
-  .balloon{
-
-
-    &.purple {
-      right: 18%;
-      left: auto;
     }
   }
 }
