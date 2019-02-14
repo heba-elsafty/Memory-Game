@@ -105,6 +105,7 @@ function satartTimer(){
     }
   }, 1000);
 }
+  satartTimer();
 
 /*
 ################
@@ -163,14 +164,6 @@ function startGame(){
       if (!cards[i].classList.contains('open')){ //if box is Unlock
         /*
         ################
-        MOVES AND TIMER
-        ################
-        */
-        movesCounter();
-        satartTimer();
-
-        /*
-        ################
         CARD GAME MATCH AND UNMATCH
         ################
         */
@@ -185,7 +178,7 @@ function startGame(){
             //add class mached
             cards[i].classList.add('matched');
             openedCard.classList.add('matched');
-
+            movesCounter();
           } else{
             let tempFirstCard = openedCard;
             setTimeout(function(){ //reset cards
@@ -196,6 +189,7 @@ function startGame(){
             },500)
             var audio = new Audio('assets/audio/NFF-wrong-move.wav');
             audio.play();
+            movesCounter();
             failedNum ++ ;
             if(failedNum == 3){
               failedNum = 0;
