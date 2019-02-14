@@ -11,7 +11,12 @@ let deck = document.querySelector(".deck");
 let card = document.getElementsByClassName('card');
 let cards = [...card];
 
-//Image
+
+/*################
+ShuffleImages
+################
+*/
+//Image Array
 const images = [
   'assets/images/cat.jpg' ,
   'assets/images/cow.jpg',
@@ -30,10 +35,6 @@ const images = [
   'assets/images/monkey02.jpg',
   'assets/images/tiger.jpg',
 ]
-/*################
- ShuffleImages
-################
-*/
 // ShuffleImages
 function shuffleArray(array) {
   for (var i = array.length - 1; i > 0; i--) {
@@ -46,15 +47,18 @@ function shuffleArray(array) {
 shuffleArray(images);
 
 
-
-
-/*################
+/* ################
 GAME MOVES
 ################
 */
 let moves = 0;
 let counter = document.querySelector("#moves");
 counter.innerHTML = "<span class=\"moves-num\">" + moves + "</span>moves</span>";
+function movesCounter(){
+  moves ++;
+  counter.innerHTML = "<span class=\"moves-num\">" + moves + "</span>moves</span>";
+}
+
 
 
 /*################
@@ -116,6 +120,7 @@ function restartBtnGame(){
   // Reset MOVES
   moves = 0;
   counter.innerHTML = "<span class=\"moves-num\">" + moves + "</span>moves</span>";
+
   // Reset TIMER
   seconds = 0 ;
   minutes = 0 ;
@@ -127,11 +132,9 @@ function restartBtnGame(){
   clearInterval(interval);
 
   // Reset Rating
-scoreRateNum =5;
-failedNum = 0;
-drawStars(scoreRateNum); 
-
-
+  scoreRateNum =5;
+  failedNum = 0;
+  drawStars(scoreRateNum);
 
   // Reset CARD
   openedImage = null;
@@ -143,11 +146,11 @@ drawStars(scoreRateNum);
   }
 }
 
-
-// for (let i = 0 ; i < cards.length ; i++){
-//   cards[i].classList.remove('open', 'card-is-flipped','matched');
-//   cards[i].innerHTML = '<div class="back-card"><img src="assets/images/memory-logo.png"></div>';
-// }
+/*
+################
+CONGTRATION POPUP
+################
+*/
 
 /*
 ################
@@ -163,17 +166,8 @@ function startGame(){
         MOVES AND TIMER
         ################
         */
-        function movesCounter(){
-          moves ++;
-          counter.innerHTML = "<span class=\"moves-num\">" + moves + "</span>moves</span>";
-          if(moves == 1){
-            secondss = 0;
-            minutes = 0;
-            hours = 0;
-            satartTimer();
-          }
-        }
         movesCounter();
+        satartTimer();
 
         /*
         ################
