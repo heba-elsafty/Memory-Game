@@ -1,3 +1,10 @@
+/*################
+GLOPAL VARIABLE
+################
+*/
+let openedImage = null;
+let openedCard = null;
+let failedNum = 0;
 // click on a card to  display the card image
 // cards array holds all cards
 let deck = document.querySelector(".deck");
@@ -23,7 +30,10 @@ const images = [
   'assets/images/monkey02.jpg',
   'assets/images/tiger.jpg',
 ]
-
+/*################
+ ShuffleImages
+################
+*/
 // ShuffleImages
 function shuffleArray(array) {
   for (var i = array.length - 1; i > 0; i--) {
@@ -35,19 +45,22 @@ function shuffleArray(array) {
 }
 shuffleArray(images);
 
-// Global variable
-let openedImage = null;
-let openedCard = null;
-let failedNum = 0;
 
 
-//Game Moves
+
+/*################
+GAME MOVES
+################
+*/
 let moves = 0;
 let counter = document.querySelector("#moves");
 counter.innerHTML = "<span class=\"moves-num\">" + moves + "</span>moves</span>";
 
 
-//GAME Rate
+/*################
+GAME RATE
+################
+*/
 let scoreRateNum = 5;
 function drawStars(rateNum){
   const rateHtml = document.getElementById('rate');
@@ -58,7 +71,10 @@ function drawStars(rateNum){
 }
 drawStars(scoreRateNum); //on start draw 5 stars
 
-// Game Timer
+/*################
+GAME TIMER
+################
+*/
 let seconds = 0 , minutes = 0;
 let timer = document.querySelector('#timer');
 timer.innerHTML = "<div class=\"minutes\"> \
@@ -96,27 +112,30 @@ reset.addEventListener('click', function(){
   restartBtnGame();
 });
 
-
 function restartBtnGame(){
   // Reset MOVES
   moves = 0;
   counter.innerHTML = "<span class=\"moves-num\">" + moves + "</span>moves</span>";
-
   // Reset TIMER
+  seconds = 0 ;
+  minutes = 0 ;
   timer.innerHTML = "<div class=\"minutes\"> \
-  <div class=\"numbers\">" + 0 + "</div>min</div> \
+  <div class=\"numbers\">" + seconds+ "</div>min</div> \
   <div class=\"seconds\"> \
-  <div class=\"numbers\">" + 0 + "</div>sec</div> \
+  <div class=\"numbers\">" + minutes + "</div>sec</div> \
   </div>";
   clearInterval(interval);
 
   // Reset Rating
-  drawStars(5); //on start draw 5 stars
+scoreRateNum =5;
+failedNum = 0;
+drawStars(scoreRateNum); 
+
+
 
   // Reset CARD
   openedImage = null;
   openedCard = null;
-  failedNum = null;
   deck = shuffleArray(images);
   for (let i = 0 ; i < cards.length ; i++){
     cards[i].classList.remove('open', 'card-is-flipped','matched');
