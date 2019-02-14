@@ -111,6 +111,9 @@ function restartBtnGame(){
   // Reset CARD
 
   function resetCardtGame(){
+    openedImage = null;
+    openedCard = null;
+    failedNum = null;
     deck = shuffleArray(images);
     for (let i = 0 ; i < cards.length ; i++){
       cards[i].classList.remove('open', 'card-is-flipped','matched');
