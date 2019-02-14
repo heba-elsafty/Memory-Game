@@ -18,6 +18,7 @@ html,body{
 body{
   background: url('../images/pattern.png');
   .wrapper{
+    padding: 1em 0 3em;
     header{
       text-align: center;
       margin: 1em;
@@ -62,7 +63,6 @@ body{
           .string {
             background: #ffd47b;
             border: 1px solid #ffd47b;
-            height: 115px;
           }
         }
 
@@ -79,7 +79,6 @@ body{
           .string {
             background: $pink;
             border: 1px solid $pink;
-            height: 115px;
           }
         }
 
@@ -160,7 +159,7 @@ body{
 
         .string {
           position: absolute;
-          height: 70px;
+          height: 150px;
           width: 1px;
           left: 48%;
           top: 100%;
@@ -313,4 +312,13 @@ body{
       }
     }
   }
+}
+
+.card.back-img{
+  background:url("../images/memory-logo.png") ;
+  background-color: #fff;
+  border-radius: 10px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }

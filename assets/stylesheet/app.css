@@ -278,234 +278,242 @@ html, body {
 
 body {
   background: url("../images/pattern.png"); }
-  body .wrapper header {
-    text-align: center;
-    margin: 1em; }
-    body .wrapper header a {
-      display: block; }
-      body .wrapper header a img {
-        width: 300px; }
-  body .wrapper main {
-    background-image: linear-gradient(to right, #a7ce48, #ffd47b, #f97df5, #f5a371, #efe348);
-    background-size: 600%;
-    margin-bottom: 1em;
-    border-radius: 10px;
-    box-shadow: 12px 15px 20px 0 rgba(107, 40, 105, 0.5);
-    width: 992px;
-    margin: 0 auto;
-    /* Animation */
-    animation-duration: 50s;
-    animation-iteration-count: infinite;
-    animation-name: gradients;
-    /*
-    ################
-    balloon
-    ################
-    */
-    /*
-    ################
-    TOdO Game HEADR Action
-    ################
-    */
-    /*
-    ################
-    TOdO Game CARD GAME
-    ################
-    */ }
-    body .wrapper main .balloon {
-      border: 1px solid #000;
-      border-radius: 50% 50% 50% 50%/ 40% 40% 60% 60%; }
-      body .wrapper main .balloon.lightyellow {
-        position: absolute;
-        background: #ffd47b;
-        height: 85px;
-        width: 75px;
-        left: 30%;
-        top: 2%; }
-        body .wrapper main .balloon.lightyellow .triangle {
-          border-bottom: 14px solid #ffd47b; }
-        body .wrapper main .balloon.lightyellow .string {
-          background: #ffd47b;
-          border: 1px solid #ffd47b;
-          height: 115px; }
-      body .wrapper main .balloon.pink {
-        position: absolute;
-        background: #ff3fd6;
-        height: 85px;
-        width: 75px;
-        right: 30%;
-        top: 2%; }
-        body .wrapper main .balloon.pink .triangle {
-          border-bottom: 14px solid #ff3fd6; }
-        body .wrapper main .balloon.pink .string {
-          background: #ff3fd6;
-          border: 1px solid #ff3fd6;
-          height: 115px; }
-      body .wrapper main .balloon.purple {
-        position: absolute;
-        background: #861a54;
-        left: 18%;
-        top: 9%;
-        height: 65px;
-        width: 70px; }
-        body .wrapper main .balloon.purple .triangle {
-          border-bottom: 14px solid #861a54; }
-        body .wrapper main .balloon.purple .string {
-          background: #861a54;
-          border: 1px solid #861a54; }
-      body .wrapper main .balloon.green {
-        position: absolute;
-        background: #a7ce48;
-        right: 18%;
-        top: 9%;
-        height: 65px;
-        width: 70px; }
-        body .wrapper main .balloon.green .triangle {
-          border-bottom: 14px solid #a7ce48; }
-        body .wrapper main .balloon.green .string {
-          background: #a7ce48;
-          border: 1px solid #a7ce48; }
-      body .wrapper main .balloon .eye {
-        position: absolute;
-        width: 7px;
-        height: 7px;
-        top: 40%;
-        left: 22%;
-        background: #000;
-        border-radius: 50%; }
-        body .wrapper main .balloon .eye:after {
-          content: '';
-          left: 35px;
-          width: 7px;
-          height: 7px;
-          border-radius: 50%;
-          background: #000;
-          position: absolute; }
-      body .wrapper main .balloon .mouth {
-        position: absolute;
-        top: 45%;
-        left: 43%;
-        width: 7px;
-        height: 7px;
-        border-radius: 50%; }
-      body .wrapper main .balloon .happy {
-        border: 2px solid;
-        border-color: transparent #000 #000 transparent;
-        transform: rotate(45deg); }
-      body .wrapper main .balloon .triangle {
-        position: absolute;
-        left: 40%;
-        bottom: -10%;
-        width: 0;
-        height: 0;
-        border-left: 7px solid transparent;
-        border-right: 7px solid transparent; }
-      body .wrapper main .balloon .string {
-        position: absolute;
-        height: 70px;
-        width: 1px;
-        left: 48%;
-        top: 100%;
-        z-index: -1; }
-      body .wrapper main .balloon .star {
-        width: 20px;
-        height: 20px;
-        background: white;
-        -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-        clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); }
-      body .wrapper main .balloon .star-purple {
-        width: 30px;
-        height: 30px;
-        margin-left: 51px;
-        margin-top: -5px;
-        background: #861a54;
-        -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-        clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); }
-      body .wrapper main .balloon .star-lighyellow {
-        background: #ffd47b; }
-    body .wrapper main .game-header {
-      background: #ffd47b;
-      padding: 1em;
-      border-radius: 10px 10px 0 0;
-      height: 100px;
-      min-height: 100px;
-      display: flex;
-      align-items: center;
-      box-shadow: 0 2px 10px 1px #00000030;
+  body .wrapper {
+    padding: 1em 0 3em; }
+    body .wrapper header {
+      text-align: center;
+      margin: 1em; }
+      body .wrapper header a {
+        display: block; }
+        body .wrapper header a img {
+          width: 300px; }
+    body .wrapper main {
+      background-image: linear-gradient(to right, #a7ce48, #ffd47b, #f97df5, #f5a371, #efe348);
+      background-size: 600%;
+      margin-bottom: 1em;
+      border-radius: 10px;
+      box-shadow: 12px 15px 20px 0 rgba(107, 40, 105, 0.5);
+      width: 992px;
+      margin: 0 auto;
+      /* Animation */
+      animation-duration: 50s;
+      animation-iteration-count: infinite;
+      animation-name: gradients;
       /*
       ################
-      TIMER
+      balloon
+      ################
+      */
+      /*
+      ################
+      TOdO Game HEADR Action
+      ################
+      */
+      /*
+      ################
+      TOdO Game CARD GAME
       ################
       */ }
-      body .wrapper main .game-header #rate {
-        color: #ff3fd6;
-        font-size: 18px; }
-        body .wrapper main .game-header #rate i {
-          font-weight: 600;
-          font-size: 15px;
-          padding-left: 5px; }
-      body .wrapper main .game-header #timer {
-        color: #92278f;
-        text-align: center;
-        text-transform: uppercase;
-        font-size: 13px;
-        letter-spacing: 2px; }
-        body .wrapper main .game-header #timer .hours, body .wrapper main .game-header #timer .minutes, body .wrapper main .game-header #timer .seconds {
-          display: inline-block;
-          padding: 10px;
-          width: 50px;
-          border-radius: 5px;
-          color: #92278f; }
-          body .wrapper main .game-header #timer .hours .numbers, body .wrapper main .game-header #timer .minutes .numbers, body .wrapper main .game-header #timer .seconds .numbers {
-            color: #ffd47b;
-            font-size: 2em;
-            font-weight: 600; }
-        body .wrapper main .game-header #timer .hours {
-          background: white; }
-        body .wrapper main .game-header #timer .minutes {
-          background: #a7ce48; }
-        body .wrapper main .game-header #timer .seconds {
-          background: #f78b1e; }
-      body .wrapper main .game-header #moves {
-        font-size: 20px;
-        color: #92278f;
-        border-radius: 50px; }
-        body .wrapper main .game-header #moves .moves-num {
-          font-size: 30px;
-          font-weight: 600;
-          padding-right: 10px;
-          color: #ff3fd6; }
-    body .wrapper main .card.matched {
-      transition: box-shadow 1s;
-      border-radius: 10px;
-      cursor: text;
-      border: 10px solid #a7ce48;
-      background: #a7ce48;
-      box-shadow: -8px 8px 5px 0px rgba(99, 122, 42, 0.64);
-      transition: box-shadow 0.5s, border-width 0.5s;
-      border-style: outset;
-      position: absolute;
-      top: 0;
-      right: 0;
-      left: 0; }
-    body .wrapper main .card.card-is-flipped {
-      transform: translateX(-100%) rotateY(-180deg); }
-      body .wrapper main .card.card-is-flipped .back-card img {
-        transform: translate(0, 25%); }
-    body .wrapper main .card .front-card {
-      display: flex;
-      height: 100%;
-      position: absolute;
-      height: 100%;
-      width: 100%; }
-      body .wrapper main .card .front-card img {
-        border-radius: 10px; }
-    body .wrapper main .card .back-card {
-      background-color: #fff;
-      border-radius: 10px;
-      height: 100%;
-      transform: rotateY(180deg); }
-      body .wrapper main .card .back-card img {
-        transform: translate(0.25%) translateY(25%) rotateY(-180deg); }
+      body .wrapper main .balloon {
+        border: 1px solid #000;
+        border-radius: 50% 50% 50% 50%/ 40% 40% 60% 60%; }
+        body .wrapper main .balloon.lightyellow {
+          position: absolute;
+          background: #ffd47b;
+          height: 85px;
+          width: 75px;
+          left: 30%;
+          top: 2%; }
+          body .wrapper main .balloon.lightyellow .triangle {
+            border-bottom: 14px solid #ffd47b; }
+          body .wrapper main .balloon.lightyellow .string {
+            background: #ffd47b;
+            border: 1px solid #ffd47b; }
+        body .wrapper main .balloon.pink {
+          position: absolute;
+          background: #ff3fd6;
+          height: 85px;
+          width: 75px;
+          right: 30%;
+          top: 2%; }
+          body .wrapper main .balloon.pink .triangle {
+            border-bottom: 14px solid #ff3fd6; }
+          body .wrapper main .balloon.pink .string {
+            background: #ff3fd6;
+            border: 1px solid #ff3fd6; }
+        body .wrapper main .balloon.purple {
+          position: absolute;
+          background: #861a54;
+          left: 18%;
+          top: 9%;
+          height: 65px;
+          width: 70px; }
+          body .wrapper main .balloon.purple .triangle {
+            border-bottom: 14px solid #861a54; }
+          body .wrapper main .balloon.purple .string {
+            background: #861a54;
+            border: 1px solid #861a54; }
+        body .wrapper main .balloon.green {
+          position: absolute;
+          background: #a7ce48;
+          right: 18%;
+          top: 9%;
+          height: 65px;
+          width: 70px; }
+          body .wrapper main .balloon.green .triangle {
+            border-bottom: 14px solid #a7ce48; }
+          body .wrapper main .balloon.green .string {
+            background: #a7ce48;
+            border: 1px solid #a7ce48; }
+        body .wrapper main .balloon .eye {
+          position: absolute;
+          width: 7px;
+          height: 7px;
+          top: 40%;
+          left: 22%;
+          background: #000;
+          border-radius: 50%; }
+          body .wrapper main .balloon .eye:after {
+            content: '';
+            left: 35px;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #000;
+            position: absolute; }
+        body .wrapper main .balloon .mouth {
+          position: absolute;
+          top: 45%;
+          left: 43%;
+          width: 7px;
+          height: 7px;
+          border-radius: 50%; }
+        body .wrapper main .balloon .happy {
+          border: 2px solid;
+          border-color: transparent #000 #000 transparent;
+          transform: rotate(45deg); }
+        body .wrapper main .balloon .triangle {
+          position: absolute;
+          left: 40%;
+          bottom: -10%;
+          width: 0;
+          height: 0;
+          border-left: 7px solid transparent;
+          border-right: 7px solid transparent; }
+        body .wrapper main .balloon .string {
+          position: absolute;
+          height: 150px;
+          width: 1px;
+          left: 48%;
+          top: 100%;
+          z-index: -1; }
+        body .wrapper main .balloon .star {
+          width: 20px;
+          height: 20px;
+          background: white;
+          -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+          clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); }
+        body .wrapper main .balloon .star-purple {
+          width: 30px;
+          height: 30px;
+          margin-left: 51px;
+          margin-top: -5px;
+          background: #861a54;
+          -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+          clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); }
+        body .wrapper main .balloon .star-lighyellow {
+          background: #ffd47b; }
+      body .wrapper main .game-header {
+        background: #ffd47b;
+        padding: 1em;
+        border-radius: 10px 10px 0 0;
+        height: 100px;
+        min-height: 100px;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 2px 10px 1px #00000030;
+        /*
+        ################
+        TIMER
+        ################
+        */ }
+        body .wrapper main .game-header #rate {
+          color: #ff3fd6;
+          font-size: 18px; }
+          body .wrapper main .game-header #rate i {
+            font-weight: 600;
+            font-size: 15px;
+            padding-left: 5px; }
+        body .wrapper main .game-header #timer {
+          color: #92278f;
+          text-align: center;
+          text-transform: uppercase;
+          font-size: 13px;
+          letter-spacing: 2px; }
+          body .wrapper main .game-header #timer .hours, body .wrapper main .game-header #timer .minutes, body .wrapper main .game-header #timer .seconds {
+            display: inline-block;
+            padding: 10px;
+            width: 50px;
+            border-radius: 5px;
+            color: #92278f; }
+            body .wrapper main .game-header #timer .hours .numbers, body .wrapper main .game-header #timer .minutes .numbers, body .wrapper main .game-header #timer .seconds .numbers {
+              color: #ffd47b;
+              font-size: 2em;
+              font-weight: 600; }
+          body .wrapper main .game-header #timer .hours {
+            background: white; }
+          body .wrapper main .game-header #timer .minutes {
+            background: #a7ce48; }
+          body .wrapper main .game-header #timer .seconds {
+            background: #f78b1e; }
+        body .wrapper main .game-header #moves {
+          font-size: 20px;
+          color: #92278f;
+          border-radius: 50px; }
+          body .wrapper main .game-header #moves .moves-num {
+            font-size: 30px;
+            font-weight: 600;
+            padding-right: 10px;
+            color: #ff3fd6; }
+      body .wrapper main .card.matched {
+        transition: box-shadow 1s;
+        border-radius: 10px;
+        cursor: text;
+        border: 10px solid #a7ce48;
+        background: #a7ce48;
+        box-shadow: -8px 8px 5px 0px rgba(99, 122, 42, 0.64);
+        transition: box-shadow 0.5s, border-width 0.5s;
+        border-style: outset;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0; }
+      body .wrapper main .card.card-is-flipped {
+        transform: translateX(-100%) rotateY(-180deg); }
+        body .wrapper main .card.card-is-flipped .back-card img {
+          transform: translate(0, 25%); }
+      body .wrapper main .card .front-card {
+        display: flex;
+        height: 100%;
+        position: absolute;
+        height: 100%;
+        width: 100%; }
+        body .wrapper main .card .front-card img {
+          border-radius: 10px; }
+      body .wrapper main .card .back-card {
+        background-color: #fff;
+        border-radius: 10px;
+        height: 100%;
+        transform: rotateY(180deg); }
+        body .wrapper main .card .back-card img {
+          transform: translate(0.25%) translateY(25%) rotateY(-180deg); }
+
+.card.back-img {
+  background: url("../images/memory-logo.png");
+  background-color: #fff;
+  border-radius: 10px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat; }
 
 /*# sourceMappingURL=app.css.map */

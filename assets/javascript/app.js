@@ -1,7 +1,8 @@
 // click on a card to  display the card image
 // cards array holds all cards
-const card = document.getElementsByClassName('card');
-const cards = [...card];
+let deck = document.querySelector(".deck");
+let card = document.getElementsByClassName('card');
+let cards = [...card];
 
 //Image
 const images = [
@@ -77,7 +78,7 @@ function satartTimer(){
       hours++;
       minutes = 0
     }
-  }, 500);
+  }, 1000);
 }
 
 /*
@@ -87,35 +88,43 @@ RESTART BUTTON
 */
 let reset = document.querySelector("#restart");
 reset.addEventListener('click', function(){
-  restartGame();
+  restartBtnGame();
 });
 
 
-function restartGame(){
+function restartBtnGame(){
   // Reset MOVES
- moves = 0;
- counter.innerHTML = "<span class=\"moves-num\">" + moves + "</span>moves</span>";
+  moves = 0;
+  counter.innerHTML = "<span class=\"moves-num\">" + moves + "</span>moves</span>";
 
- // Reset TIMER
- timer.innerHTML = "<div class=\"minutes\"> \
- <div class=\"numbers\">" + 0 + "</div>min</div> \
- <div class=\"seconds\"> \
- <div class=\"numbers\">" + 0 + "</div>sec</div> \
- </div>";
- clearInterval(interval);
+  // Reset TIMER
+  timer.innerHTML = "<div class=\"minutes\"> \
+  <div class=\"numbers\">" + 0 + "</div>min</div> \
+  <div class=\"seconds\"> \
+  <div class=\"numbers\">" + 0 + "</div>sec</div> \
+  </div>";
+  clearInterval(interval);
 
- // Reset Rating
- drawStars(5); //on start draw 5 stars
+  // Reset Rating
+  drawStars(5); //on start draw 5 stars
 
-// Reset CARD
-  for (let i = 0 ; i < cards.length ; i++){
-    cards[i].classList.remove('open', 'card-is-flipped','matched');
-    cards[i].innerHTML = '<div class="back-card"><img src="assets/images/memory-logo.png"></div>';
+  // Reset CARD
+
+  function resetCardtGame(){
+    deck = shuffleArray(images);
+    for (let i = 0 ; i < cards.length ; i++){
+      cards[i].classList.remove('open', 'card-is-flipped','matched');
+      cards[i].innerHTML = '<div class="back-card"><img src="assets/images/memory-logo.png"></div>';
+    }
   }
-
+  resetCardtGame();
 }
 
 
+// for (let i = 0 ; i < cards.length ; i++){
+//   cards[i].classList.remove('open', 'card-is-flipped','matched');
+//   cards[i].innerHTML = '<div class="back-card"><img src="assets/images/memory-logo.png"></div>';
+// }
 
 /*
 ################
@@ -133,7 +142,7 @@ function startGame(){
         */
         function movesCounter(){
           moves ++;
-            counter.innerHTML = "<span class=\"moves-num\">" + moves + "</span>moves</span>";
+          counter.innerHTML = "<span class=\"moves-num\">" + moves + "</span>moves</span>";
           if(moves == 1){
             secondss = 0;
             minutes = 0;
@@ -189,8 +198,3 @@ function startGame(){
   }
 }
 startGame();
-// function reset(){
-//   openedImage = null;
-//   openedCard = null;
-//
-// }
