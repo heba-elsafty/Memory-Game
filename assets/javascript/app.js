@@ -44,6 +44,7 @@ let failedNum = 0;
 //Game Moves
 let moves = 0;
 let counter = document.querySelector("#moves");
+counter.innerHTML = "<span class=\"moves-num\">" + moves + "</span>moves</span>";
 
 
 //GAME Rate
@@ -60,6 +61,11 @@ drawStars(scoreRateNum); //on start draw 5 stars
 // Game Timer
 let seconds = 0 , minutes = 0;
 let timer = document.querySelector('#timer');
+timer.innerHTML = "<div class=\"minutes\"> \
+<div class=\"numbers\">" + minutes + "</div>min</div> \
+<div class=\"seconds\"> \
+<div class=\"numbers\">" + seconds + "</div>sec</div> \
+</div>";
 let interval ;
 function satartTimer(){
   interval = setInterval(function () {
@@ -68,7 +74,6 @@ function satartTimer(){
     <div class=\"seconds\"> \
     <div class=\"numbers\">" + seconds + "</div>sec</div> \
     </div>";
-    ;
     seconds++;
     if(seconds == 60){
       minutes++;
@@ -109,18 +114,14 @@ function restartBtnGame(){
   drawStars(5); //on start draw 5 stars
 
   // Reset CARD
-
-  function resetCardtGame(){
-    openedImage = null;
-    openedCard = null;
-    failedNum = null;
-    deck = shuffleArray(images);
-    for (let i = 0 ; i < cards.length ; i++){
-      cards[i].classList.remove('open', 'card-is-flipped','matched');
-      cards[i].innerHTML = '<div class="back-card"><img src="assets/images/memory-logo.png"></div>';
-    }
+  openedImage = null;
+  openedCard = null;
+  failedNum = null;
+  deck = shuffleArray(images);
+  for (let i = 0 ; i < cards.length ; i++){
+    cards[i].classList.remove('open', 'card-is-flipped','matched');
+    cards[i].innerHTML = '<div class="back-card"><img src="assets/images/memory-logo.png"></div>';
   }
-  resetCardtGame();
 }
 
 

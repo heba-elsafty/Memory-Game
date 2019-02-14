@@ -508,12 +508,4 @@ body {
         body .wrapper main .card .back-card img {
           transform: translate(0.25%) translateY(25%) rotateY(-180deg); }
 
-.card.back-img {
-  background: url("../images/memory-logo.png");
-  background-color: #fff;
-  border-radius: 10px;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat; }
-
 /*# sourceMappingURL=app.css.map */
