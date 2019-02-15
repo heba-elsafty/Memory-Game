@@ -57,6 +57,9 @@ counter.innerHTML = "<span class=\"moves-num\">" + moves + "</span>moves</span>"
 function movesCounter(){
   moves ++;
   counter.innerHTML = "<span class=\"moves-num\">" + moves + "</span>moves</span>";
+  if(moves == 1){
+    satartTimer();
+  }
 }
 
 
@@ -86,7 +89,7 @@ timer.innerHTML = "<div class=\"minutes\"> \
 <div class=\"seconds\"> \
 <div class=\"numbers\">" + seconds + "</div>sec</div> \
 </div>";
-let interval ;
+let interval  ;
 function satartTimer(){
   interval = setInterval(function () {
     timer.innerHTML = "<div class=\"minutes\"> \
@@ -105,7 +108,6 @@ function satartTimer(){
     }
   }, 1000);
 }
-  satartTimer();
 
 /*
 ################
@@ -147,11 +149,7 @@ function restartBtnGame(){
   }
 }
 
-/*
-################
-CONGTRATION POPUP
-################
-*/
+
 
 /*
 ################
@@ -161,12 +159,11 @@ Start Game
 function startGame(){
   for (let i = 0 ; i < cards.length ; i++){
     cards[i].addEventListener('click', function (e) { //on click
+      if(cards[i] == 16 ){
+            alert("Congrast");
+      }
       if (!cards[i].classList.contains('open')){ //if box is Unlock
-        /*
-        ################
-        CARD GAME MATCH AND UNMATCH
-        ################
-        */
+        // CARD GAME MATCH AND UNMATCH
         cards[i].classList.add('open','card-is-flipped');
         cards[i].innerHTML = '<div class="front-card"><img src="' + images[i] +'" /></div>';
         if(openedImage  == null ){ //this is first card
@@ -202,10 +199,27 @@ function startGame(){
           }
           openedImage = null;
         }
-
       }
 
+
+
+
+
     }); //EOF  on Click
+    /*
+    ################
+    CONGTRATION POPUP
+    ################
+    */
+
   }
 }
 startGame();
+
+
+
+/*
+################
+END Game
+################
+*/
