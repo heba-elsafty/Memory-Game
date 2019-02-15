@@ -171,6 +171,8 @@ function startGame(){
             //add class mached
             cards[i].classList.add('matched');
             openedCard.classList.add('matched');
+            let audio = new Audio('assets/audio/yahoo.wav');
+            audio.play();
             congrast();
             movesCounter();
           } else{
@@ -181,7 +183,7 @@ function startGame(){
               tempFirstCard.classList.remove('open','card-is-flipped');
               cards[i].classList.remove('open','card-is-flipped');
             },500)
-            var audio = new Audio('assets/audio/NFF-wrong-move.wav');
+            let audio = new Audio('assets/audio/icq-uh-oh.mp3');
             audio.play();
             movesCounter();
             failedNum ++ ;
@@ -220,6 +222,8 @@ function congrast(){
   let cardMatched = document.getElementsByClassName("matched");
   if(cardMatched.length == 16){
     stopTimer();
+    let audio = new Audio('assets/audio/winner.wav');
+    audio.play();
     let modal = document.getElementById('congrast-modal');
     modal.classList.add("show-modal");
     // PRINT TIMER

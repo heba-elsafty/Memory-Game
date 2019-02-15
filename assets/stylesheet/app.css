@@ -286,7 +286,7 @@ MODAL STYLE
       background-color: #c71c97;
       border-color: #dc52b5;
       color: #fff;
-      font-family: "Carton"; }
+      cursor: pointer; }
   .modal.show-modal {
     opacity: 1;
     visibility: visible;
