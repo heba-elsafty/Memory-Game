@@ -84,6 +84,14 @@ drawStars(scoreRateNum); //on start draw 5 stars
 GAME TIMER
 ################
 */
+function getTimerContent(){
+  return "<div class=\"minutes\"> \
+  <div class=\"numbers\">" + minutes+ "</div>min</div> \
+  <div class=\"seconds\"> \
+  <div class=\"numbers\">" + seconds + "</div>sec</div> \
+  </div>";
+}
+
 let seconds = 0 , minutes = 0;
 let timer = document.querySelector('#timer');
 timer.innerHTML = getTimerContent();
@@ -148,7 +156,6 @@ function restartBtnGame(){
 }
 
 
-
 /*
 ################
 Start Game
@@ -201,22 +208,15 @@ function startGame(){
       }
 
     }); //EOF  on Click
-    /*
-    ################
-    CONGTRATION POPUP
-    ################
-    */
 
   }
 }
 startGame();
-function getTimerContent(){
-  return "<div class=\"minutes\"> \
-  <div class=\"numbers\">" + minutes+ "</div>min</div> \
-  <div class=\"seconds\"> \
-  <div class=\"numbers\">" + seconds + "</div>sec</div> \
-  </div>";
-}
+/*
+################
+CONGTRATION POPUP
+################
+*/
 
 function congrast(){
   let cardMatched = document.getElementsByClassName("matched");
