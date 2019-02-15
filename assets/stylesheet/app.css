@@ -171,14 +171,17 @@ CARD STYLE
   background-position: 0 0;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  margin-right: -15px;
+  margin-left: -15px; }
   @media screen and (min-width: 576px) {
     .card-deck {
       flex-flow: row wrap;
       margin-right: -15px;
       margin-left: -15px; } }
   .card-deck .flip-card {
-    height: 200px;
+    height: 500px;
     cursor: pointer;
     display: flex;
     min-width: 0;
@@ -188,14 +191,20 @@ CARD STYLE
     border-radius: 10px;
     padding: 1em;
     perspective: 600px;
-    position: relative; }
+    position: relative;
+    flex: 0 0 46%;
+    width: 46%;
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-bottom: 20px; }
     @media screen and (min-width: 576px) {
       .card-deck .flip-card {
         flex: 0 0 21.8%;
         width: 21.8%;
         margin-right: 15px;
         margin-left: 15px;
-        margin-bottom: 20px; } }
+        margin-bottom: 20px;
+        height: 200px; } }
     .card-deck .flip-card .card {
       position: relative;
       height: 100%;
@@ -228,8 +237,7 @@ CARD STYLE
   .btn.btn-primary {
     color: #92278f;
     background: #f9fafb;
-    border-color: #ebeced;
-    font-family: 'Gretoon', sans-serif; }
+    border-color: #ebeced; }
     .btn.btn-primary:hover {
       color: #fff;
       background-color: #c71c97;
