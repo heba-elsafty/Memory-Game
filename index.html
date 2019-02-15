@@ -60,18 +60,17 @@
         <div class="game-header">
           <div class="container__row align-item-center">
             <div class="container__col-2">
-              <div id="rate"></div>
+              <div id="rate" class="rate"></div>
             </div>
-            <div class="container__col-5">
-              <div id="timer">
+            <div class="container__col-4">
+              <div id="timer" class="timer">
               </div>
             </div>
-            <div class="container__col-2">
-              <div id="moves"></div>
+            <div class="container__col-3 text-center">
+              <div id="moves" class="moves"></div>
             </div>
             <div class="container__col-3 text-end">
               <button id="restart" type="button" class="btn btn-primary"><i class="fas fa-sync-alt"></i> reset</button>
-              <button id="trigger" type="button" class="btn btn-primary"> open modal</button>
             </div>
           </div>
         </div>
@@ -210,11 +209,60 @@
           </div>
         </div>
         <!-- POPUP -->
-        <div class="modal">
-            <div class="modal-content">
-              <span class="close-button"><i class="far fa-times-circle"></i></span>
-              <h1>Hello, I am a modal!</h1>
+        <div id="congrast-modal" class="modal">
+          <div class="modal-content">
+            <div class="inner">
+              <span id="close-button" class="close-button"><i class="far fa-times-circle"></i></span>
+              <h1>
+                <span>
+                  <div class="balloon lightyellow">
+                    <div class="star-purple"></div>
+                    <div class="face">
+                      <div class="eye"></div>
+                      <div class="mouth happy"></div>
+                    </div>
+                    <div class="triangle"></div>
+                    <div class="string"></div>
+                  </div>
+
+                  <div class="balloon purple">
+                    <div class="star star-lighyellow"></div>
+                    <div class="face">
+                      <div class="eye"></div>
+                      <div class="mouth happy"></div>
+                    </div>
+                    <div class="triangle"></div>
+                    <div class="string"></div>
+                  </div>
+                </span>
+                winner winner chicken dinner
+                <span>
+                  <div class="balloon pink">
+                    <div class="star-purple"></div>
+                    <div class="face">
+                      <div class="eye"></div>
+                      <div class="mouth happy"></div>
+                    </div>
+                    <div class="triangle"></div>
+                    <div class="string"></div>
+                  </div>
+                  <div class="balloon green">
+                    <div class="star star-lighyellow"></div>
+                    <div class="face">
+                      <div class="eye"></div>
+                      <div class="mouth happy"></div>
+                    </div>
+                    <div class="triangle"></div>
+                    <div class="string"></div>
+                  </div>
+                </span>
+              </h1>
+              <div id="f-timer" class="timer"></div>
+              <div id="f-moves" class="moves"></div>
+              <div id="f-rate" class="rate"></div>
+              <button id="play-again" class="btn btn-primary">Play Again <i class="fas fa-grin-tears"></i></button>
             </div>
+          </div>
         </div>
       </div>
     </main>

@@ -70,6 +70,7 @@ CARD STYLE
     color: $primary;
     background: #f9fafb;
     border-color: #ebeced;
+    font-family: 'Gretoon', sans-serif;
     &:hover{
       color: #fff;
       background-color: #c71c97;
@@ -102,24 +103,39 @@ MODAL STYLE
   transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
   .modal-content {
     position: absolute;
+    background-image: url('../images/winnerbg.png');
+    background-repeat: repeat-x;
+    background-position: top;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
-    padding: 1rem 1.5rem;
-    width: 24rem;
+    padding: 2rem 1.5rem;
+    width: 80%;
     border-radius: 0.5rem;
+    text-align: center;
+    h1{
+      color: $primary;
+      width: 50%;
+      margin: 0.5em auto;
+    }
     .close-button {
       float: right;
-      line-height: 1.5rem;
-      font-size: 20px;
       text-align: center;
-      color: lightgray;
+      color: $primary;
       cursor: pointer;
       border-radius: 0.25rem;
+      font-size: 40px;
+      margin-top: -40px;
       &:hover{
         color: darkgray;
       }
+    }
+    #play-again{
+      background-color: #c71c97;
+      border-color: #dc52b5;
+      color: #fff;
+      font-family: 'Carton'
     }
   }
   &.show-modal {
@@ -137,6 +153,9 @@ THEME-TEXT-ALIGN
 */
 .text-end{
   text-align: end;
+}
+.text-center{
+  text-align: center;
 }
 
 

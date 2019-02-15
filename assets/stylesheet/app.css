@@ -228,7 +228,8 @@ CARD STYLE
   .btn.btn-primary {
     color: #92278f;
     background: #f9fafb;
-    border-color: #ebeced; }
+    border-color: #ebeced;
+    font-family: 'Gretoon', sans-serif; }
     .btn.btn-primary:hover {
       color: #fff;
       background-color: #c71c97;
@@ -256,23 +257,36 @@ MODAL STYLE
   transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s; }
   .modal .modal-content {
     position: absolute;
+    background-image: url("../images/winnerbg.png");
+    background-repeat: repeat-x;
+    background-position: top;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
-    padding: 1rem 1.5rem;
-    width: 24rem;
-    border-radius: 0.5rem; }
+    padding: 2rem 1.5rem;
+    width: 80%;
+    border-radius: 0.5rem;
+    text-align: center; }
+    .modal .modal-content h1 {
+      color: #92278f;
+      width: 50%;
+      margin: 0.5em auto; }
     .modal .modal-content .close-button {
       float: right;
-      line-height: 1.5rem;
-      font-size: 20px;
       text-align: center;
-      color: lightgray;
+      color: #92278f;
       cursor: pointer;
-      border-radius: 0.25rem; }
+      border-radius: 0.25rem;
+      font-size: 40px;
+      margin-top: -40px; }
       .modal .modal-content .close-button:hover {
         color: darkgray; }
+    .modal .modal-content #play-again {
+      background-color: #c71c97;
+      border-color: #dc52b5;
+      color: #fff;
+      font-family: "Carton"; }
   .modal.show-modal {
     opacity: 1;
     visibility: visible;
@@ -286,6 +300,9 @@ THEME-TEXT-ALIGN
 */
 .text-end {
   text-align: end; }
+
+.text-center {
+  text-align: center; }
 
 /*
 ################
@@ -308,6 +325,29 @@ Align-item
     background-position: 40%; }
   100% {
     background-position: 0 0; } }
+@font-face {
+  font-family: 'Gretoon';
+  src: url("../fonts/Gretoon.ttf.woff") format("woff"), url("../fonts/Gretoon.ttf.svg#Gretoon") format("svg"), url("../fonts/Gretoon.ttf.eot"), url("../fonts/Gretoon.ttf.eot?#iefix") format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Orbitron Regular"), local("Orbitron-Regular"), url("../fonts/Orbitronnormal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 500;
+  src: local("Orbitron Medium"), local("Orbitron-Medium"), url("../fonts/Orbitron500.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 700;
+  src: local("Orbitron Bold"), local("Orbitron-Bold"), url("../fonts/Orbitron700.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 * {
   box-sizing: border-box; }
 
@@ -318,7 +358,9 @@ html, body {
   padding: 0; }
 
 body {
-  background: url("../images/pattern.png"); }
+  background: url("../images/pattern.png");
+  font-family: 'Gretoon', sans-serif;
+  font-size: 14px; }
   body .wrapper {
     padding: 1em 0 3em; }
     body .wrapper header {
@@ -348,6 +390,11 @@ body {
       /*
       ################
       TOdO Game HEADR Action
+      ################
+      */
+      /*
+      ################
+      TIMER
       ################
       */
       /*
@@ -464,6 +511,31 @@ body {
           clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); }
         body .wrapper main .balloon .star-lighyellow {
           background: #ffd47b; }
+      body .wrapper main .modal .inner {
+        position: relative; }
+      body .wrapper main .modal .lightyellow {
+        left: -1%;
+        top: 7%; }
+      body .wrapper main .modal .pink {
+        right: 0%;
+        top: 7%; }
+      body .wrapper main .modal .string {
+        height: 11em; }
+      body .wrapper main .modal .purple {
+        left: 10%;
+        top: 27%; }
+        body .wrapper main .modal .purple .string {
+          height: 9em; }
+      body .wrapper main .modal .green {
+        right: 12%;
+        top: 27%; }
+        body .wrapper main .modal .green .string {
+          height: 9em; }
+      body .wrapper main .modal .timer, body .wrapper main .modal .rate, body .wrapper main .modal .moves {
+        margin-bottom: 20px; }
+      body .wrapper main .modal .fa-grin-tears {
+        color: #efe348;
+        font-size: 20px; }
       body .wrapper main .game-header {
         background: #ffd47b;
         padding: 1em;
@@ -472,50 +544,44 @@ body {
         min-height: 100px;
         display: flex;
         align-items: center;
-        box-shadow: 0 2px 10px 1px #00000030;
-        /*
-        ################
-        TIMER
-        ################
-        */ }
-        body .wrapper main .game-header #rate {
-          color: #ff3fd6;
-          font-size: 18px; }
-          body .wrapper main .game-header #rate i {
-            font-weight: 600;
-            font-size: 15px;
-            padding-left: 5px; }
-        body .wrapper main .game-header #timer {
-          color: #92278f;
-          text-align: center;
-          text-transform: uppercase;
-          font-size: 13px;
-          letter-spacing: 2px; }
-          body .wrapper main .game-header #timer .hours, body .wrapper main .game-header #timer .minutes, body .wrapper main .game-header #timer .seconds {
-            display: inline-block;
-            padding: 10px;
-            width: 50px;
-            border-radius: 5px;
-            color: #92278f; }
-            body .wrapper main .game-header #timer .hours .numbers, body .wrapper main .game-header #timer .minutes .numbers, body .wrapper main .game-header #timer .seconds .numbers {
-              color: #ffd47b;
-              font-size: 2em;
-              font-weight: 600; }
-          body .wrapper main .game-header #timer .hours {
-            background: white; }
-          body .wrapper main .game-header #timer .minutes {
-            background: #a7ce48; }
-          body .wrapper main .game-header #timer .seconds {
-            background: #f78b1e; }
-        body .wrapper main .game-header #moves {
-          font-size: 20px;
-          color: #92278f;
-          border-radius: 50px; }
-          body .wrapper main .game-header #moves .moves-num {
-            font-size: 30px;
-            font-weight: 600;
-            padding-right: 10px;
-            color: #ff3fd6; }
+        box-shadow: 0 2px 10px 1px #00000030; }
+      body .wrapper main .rate {
+        color: #ff3fd6;
+        font-size: 18px; }
+        body .wrapper main .rate i {
+          font-weight: 600;
+          font-size: 15px;
+          padding-left: 5px; }
+      body .wrapper main .timer {
+        color: #92278f;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 13px;
+        letter-spacing: 2px; }
+        body .wrapper main .timer .hours, body .wrapper main .timer .minutes, body .wrapper main .timer .seconds {
+          display: inline-block;
+          padding: 5px 10px;
+          border-radius: 5px;
+          color: #92278f; }
+          body .wrapper main .timer .hours .numbers, body .wrapper main .timer .minutes .numbers, body .wrapper main .timer .seconds .numbers {
+            color: #ffd47b;
+            font-size: 2em;
+            font-weight: 600; }
+        body .wrapper main .timer .hours {
+          background: white; }
+        body .wrapper main .timer .minutes {
+          background: #a7ce48; }
+        body .wrapper main .timer .seconds {
+          background: #f78b1e; }
+      body .wrapper main .moves {
+        font-size: 20px;
+        color: #92278f;
+        border-radius: 50px; }
+        body .wrapper main .moves .moves-num {
+          font-size: 30px;
+          font-weight: 600;
+          padding-right: 10px;
+          color: #ff3fd6; }
       body .wrapper main .card.matched {
         transition: box-shadow 1s;
         border-radius: 10px;
