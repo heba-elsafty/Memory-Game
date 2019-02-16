@@ -38,7 +38,7 @@ body{
       background-size: 600%;
       margin-bottom: 1em;
       border-radius: 10px;
-      box-shadow: 12px 15px 20px 0 rgba(107, 40, 105, 0.5);
+      box-shadow:5px 10px 15px 0 rgba(107, 40, 105, 0.4);
       width: $grid__bp-lg * 1px;
       margin: 0 auto;
       /* Animation */
@@ -237,14 +237,14 @@ body{
       ################
       */
       .game-header{
-        background: #ffd47b;
+        background: #f5f6f7;
         padding: 1em;
         border-radius: 10px 10px 0 0;
         text-align: center;
         min-height: 100px;
         display: flex;
         align-items: center;
-        box-shadow:  0 2px 10px 1px #00000030;
+        box-shadow:  0 7px 10px 0 #a9a7a79e;
       }
 
       // RATE
