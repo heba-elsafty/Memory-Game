@@ -1,0 +1,28 @@
+@import 'grid';
+@media screen and(max-width: $grid__bp-sm * 1px){
+  body{
+    .wrapper{
+      header{
+        a{
+          img{
+            width: 150px
+          }
+        }
+      }
+      main{
+        width: 90% ;
+        margin: 0 auto;
+        .flip-card{
+          margin-bottom: 15px;
+          .card{
+            .back-card{
+              img{
+                transform: translate(0.25%) translateY(2%) rotateY(-180deg);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

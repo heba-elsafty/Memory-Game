@@ -9,16 +9,13 @@ CARD STYLE
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  flex-flow: row wrap;
-  margin-right: -15px;
-  margin-left: -15px;
   @media screen and(min-width: $grid__bp-sm * 1px){
     flex-flow: row wrap;
     margin-right: -15px;
     margin-left: -15px;
   }
   .flip-card{
-    height: 500px;
+    height: 200px;
     cursor: pointer;
     display: flex;
     min-width: 0;
@@ -29,18 +26,13 @@ CARD STYLE
     padding: 1em;
     perspective: 600px;
     position: relative;
-    flex: 0 0 46%;
-    width: 46%;
-    margin-right: 15px;
-    margin-left: 15px;
-    margin-bottom: 20px;
     @media screen and(min-width: $grid__bp-sm * 1px){
       flex: 0 0 21.8%;
       width: 21.8%;
       margin-right: 15px;
       margin-left: 15px;
       margin-bottom: 20px;
-      height: 200px;
+
     }
     .card{
       position: relative;
