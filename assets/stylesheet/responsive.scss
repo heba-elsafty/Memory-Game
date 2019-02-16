@@ -12,6 +12,9 @@
       main{
         width: 90% ;
         margin: 0 auto;
+        .balloon{
+          visibility: hidden;
+        }
         .flip-card{
           margin-bottom: 15px;
           .card{
@@ -22,7 +25,42 @@
             }
           }
         }
+        .modal-content {
+          width: 95%;
+        }
       }
     }
   }
 }
+
+@media screen and(min-width: 768px) and(max-width: 1024px){
+  body{
+    .wrapper{
+      main{
+        width: 90%;
+        .balloon{
+          &.green {
+            right: 3%;
+          }
+          &.purple {
+            left: 3%;
+          }
+          &.pink {
+            right: 10%;
+          }
+          &.lightyellow {
+            left: 10%;
+          }
+        }
+        .card-deck{
+          .flip-card {
+            flex: 0 0 19.8%;
+            width: 19.8%;
+            height: 150px;
+          }
+        } 
+      }
+    }
+  }
+}
+

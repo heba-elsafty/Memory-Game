@@ -37,7 +37,7 @@ $map-grid-props: (
   padding-left: 15px;
   padding-right: 15px;
   margin: 0 auto;
-  @media screen and(max-width: $grid__bp-sm * 1px){
+  @media screen and(max-width: 990px){
     width: 100%;
   }
   &--fluid{

@@ -3,7 +3,7 @@
   padding-left: 15px;
   padding-right: 15px;
   margin: 0 auto; }
-  @media screen and (max-width: 576px) {
+  @media screen and (max-width: 990px) {
     .container {
       width: 100%; } }
   .container--fluid {
@@ -146,9 +146,28 @@
   body .wrapper main {
     width: 90%;
     margin: 0 auto; }
+    body .wrapper main .balloon {
+      visibility: hidden; }
     body .wrapper main .flip-card {
       margin-bottom: 15px; }
       body .wrapper main .flip-card .card .back-card img {
-        transform: translate(0.25%) translateY(2%) rotateY(-180deg); } }
+        transform: translate(0.25%) translateY(2%) rotateY(-180deg); }
+    body .wrapper main .modal-content {
+      width: 95%; } }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  body .wrapper main {
+    width: 90%; }
+    body .wrapper main .balloon.green {
+      right: 3%; }
+    body .wrapper main .balloon.purple {
+      left: 3%; }
+    body .wrapper main .balloon.pink {
+      right: 10%; }
+    body .wrapper main .balloon.lightyellow {
+      left: 10%; }
+    body .wrapper main .card-deck .flip-card {
+      flex: 0 0 19.8%;
+      width: 19.8%;
+      height: 150px; } }
 
 /*# sourceMappingURL=responsive.css.map */
