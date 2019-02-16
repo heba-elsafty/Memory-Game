@@ -66,7 +66,11 @@ CARD STYLE
   padding: 0.5em 4em;
   line-height: 1.5;
   border-radius: 50px;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out,
+  background-color .15s ease-in-out,
+  border-color .15s ease-in-out,
+  box-shadow .15s ease-in-out;
+  font-family: 'Baloo', sans-serif;
   &.btn-primary {
     color: $primary;
     background: #f9fafb;
@@ -104,31 +108,32 @@ MODAL STYLE
   .modal-content {
     position: absolute;
     background-image: url('../images/winnerbg.png');
-    background-repeat: repeat-x;
-    background-position: top;
+    background-position: center;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
     padding: 2rem 1.5rem;
-    width: 80%;
+    width: 60%;
     border-radius: 0.5rem;
     text-align: center;
     h1{
       color: $primary;
-      width: 50%;
+      width: 60%;
       margin: 0.5em auto;
+      font-size: 40px;
+      line-height: 1.3;
     }
     .close-button {
       float: right;
       text-align: center;
-      color: $primary;
+      color: #c71c97;
       cursor: pointer;
       border-radius: 0.25rem;
       font-size: 40px;
       margin-top: -40px;
       &:hover{
-        color: darkgray;
+        color: $primary;
       }
     }
     #play-again{
@@ -136,7 +141,10 @@ MODAL STYLE
       border-color: #dc52b5;
       color: #fff;
       cursor: pointer;
-
+      &:hover{
+        background-color: $primary;
+        border-color: #bd4fba;
+      }
     }
   }
   &.show-modal {
@@ -149,14 +157,19 @@ MODAL STYLE
 
 /*
 ################
-THEME-TEXT-ALIGN
+THEME-TEXT-
 ################
 */
 .text-end{
   text-align: end;
 }
+
 .text-center{
   text-align: center;
+}
+
+.text-primary{
+  color: $primary;
 }
 
 

@@ -4,6 +4,8 @@
 @import 'components';
 @import 'animation';
 @import 'fonts';
+@import 'firework';
+
 
 *{
   box-sizing: border-box;
@@ -17,7 +19,7 @@ html,body{
 
 body{
   background: url('../images/pattern.png');
-  font-family: 'Gretoon', sans-serif;
+  font-family: 'Baloo', sans-serif;
   font-size: 14px;
   .wrapper{
     padding: 1em 0 3em;
@@ -197,27 +199,27 @@ body{
         }
         .lightyellow {
           left: -1%;
-          top: 7%;
+          top: 13%;
         }
         .pink {
           right: 0%;
-          top: 7%;
+          top: 13%;
         }
         .string{
-          height: 11em;
+          height: 6.9em;
         }
         .purple {
           left: 10%;
-          top: 27%;
+          top: -5%;
           .string{
-            height: 9em;
+            height: 9.1em;
           }
         }
         .green {
           right: 12%;
-          top: 27%;
+          top: -5%;
           .string{
-            height: 9em;
+            height: 9.1em;
           }
         }
         .timer,.rate,.moves{

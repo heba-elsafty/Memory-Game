@@ -168,6 +168,7 @@ function startGame(){
         satartTimer();
         // CARD GAME MATCH AND UNMATCH
         cards[i].classList.add('open','card-is-flipped');
+        cards[i].classList.remove('unmatched');
         cards[i].innerHTML = '<div class="front-card"><img src="' + images[i] +'" /></div>';
         if(openedImage  == null ){ //this is first card
           openedImage =  images[i];
@@ -190,6 +191,7 @@ function startGame(){
               tempFirstCard.classList.remove('open','card-is-flipped');
               cards[i].classList.remove('open','card-is-flipped');
             },500)
+
             let audio = new Audio('assets/audio/icq-uh-oh.mp3');
             audio.play();
             movesCounter();
@@ -201,7 +203,6 @@ function startGame(){
                 drawStars(scoreRateNum);
               }
             }
-            //add class notmatched
           }
           openedImage = null;
         }
@@ -222,10 +223,14 @@ function congrast(){
   let cardMatched = document.getElementsByClassName("matched");
   if(cardMatched.length == 16){
     stopTimer();
-    let audio = new Audio('assets/audio/winner.wav');
-    audio.play();
     let modal = document.getElementById('congrast-modal');
     modal.classList.add("show-modal");
+    let audio = new Audio('assets/audio/fireworks.wav');
+    audio.play();
+    setTimeout(function(){
+      let audio = new Audio('assets/audio/winner.wav');
+      audio.play();
+    },2000);
     // PRINT TIMER
     document.getElementById('f-timer').innerHTML = getTimerContent();
 
@@ -233,7 +238,7 @@ function congrast(){
     document.getElementById('f-moves').innerHTML = counter.innerHTML;
 
     // PRINT RATE
-    document.getElementById('f-rate').innerHTML =   rateHtml.innerHTML + "Stars";
+    document.getElementById('f-rate').innerHTML =   rateHtml.innerHTML + ' <span class="text-primary">Stars</span>';
 
   }
 }
